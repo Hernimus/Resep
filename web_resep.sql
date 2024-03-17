@@ -16,30 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`web_resep` /*!40100 DEFAULT CHARACTER S
 
 USE `web_resep`;
 
-/*Table structure for table `bookmarks` */
-
-DROP TABLE IF EXISTS `bookmarks`;
-
-CREATE TABLE `bookmarks` (
-  `user_id` int(11) NOT NULL,
-  `resep_id` int(11) DEFAULT NULL,
-  KEY `fk_user_id` (`user_id`),
-  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*Data for the table `bookmarks` */
-
-insert  into `bookmarks`(`user_id`,`resep_id`) values 
-(7,1),
-(6,2),
-(6,1),
-(4,1),
-(4,71),
-(4,72),
-(4,1),
-(2,4),
-(4,4);
-
 /*Table structure for table `resep` */
 
 DROP TABLE IF EXISTS `resep`;
@@ -127,6 +103,30 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `users` */
+
+/*Table structure for table `bookmarks` */
+
+DROP TABLE IF EXISTS `bookmarks`;
+
+CREATE TABLE `bookmarks` (
+  `user_id` int(11) NOT NULL,
+  `resep_id` int(11) DEFAULT NULL,
+  KEY `fk_user_id` (`user_id`),
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `bookmarks` */
+
+insert  into `bookmarks`(`user_id`,`resep_id`) values 
+(7,1),
+(6,2),
+(6,1),
+(4,1),
+(4,71),
+(4,72),
+(4,1),
+(2,4),
+(4,4);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
